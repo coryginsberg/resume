@@ -136,7 +136,7 @@
 }
 \renewcommand{\bfseries}{\Large}
 \newcommand{\entry}[4]{
-#1&\parbox[t]{10cm}{
+#1&\parbox[t]{11cm}{
   \textbf{#2}
   \hfill
 {\normalsize #3}\\
