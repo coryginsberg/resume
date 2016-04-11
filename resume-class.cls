@@ -136,7 +136,7 @@
 }
 \renewcommand{\bfseries}{\Large}
 \newcommand{\entry}[4]{
-#1&\parbox[t]{10cm}{
+#1&\parbox[t]{11cm}{
   \textbf{#2}
   \hfill
 {\normalsize #3}\\
@@ -149,6 +149,7 @@
 %%%%%%%%%%%%%%
 
 \RequirePackage[absolute,overlay]{textpos}
+
 \setlength{\TPHorizModule}{1cm}
 \setlength{\TPVertModule}{1cm}
 
@@ -157,7 +158,7 @@
 \renewcommand{\section}[1]{
 \par\vspace{\baselineskip}{\Large\color{red} ##1}
 }
-\begin{textblock}{5.25}(0, 4.33)
+\begin{textblock}{5.25}(0, 4)
 \begin{flushright}
 \obeycr
 }{%
