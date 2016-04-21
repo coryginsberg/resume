@@ -16,30 +16,30 @@
 
 \definecolor{white}{RGB}{255,255,255}
 
-\definecolor{darkgray}{HTML}{333333}
-\definecolor{gray}{HTML}{666666}
-\definecolor{lightgray}{HTML}{999999}
+\definecolor{darkgray}{HTML}{000000}
+\definecolor{gray}{HTML}{000000}
+\definecolor{lightgray}{HTML}{000000}
 
-\definecolor{green}{HTML}{7AC943}
-\definecolor{orange}{HTML}{FDA333}
-\definecolor{purple}{HTML}{D3A4F9}
-\definecolor{red}{HTML}{CE2227}
-\definecolor{blue}{HTML}{353D75}
+\definecolor{green}{HTML}{000000}
+\definecolor{orange}{HTML}{000000}
+\definecolor{purple}{HTML}{000000}
+\definecolor{red}{HTML}{000000}
+\definecolor{blue}{HTML}{000000}
 
 \ifdefined\@cv@print
-\colorlet{green}{gray}
-\colorlet{orange}{gray}
-\colorlet{purple}{gray}
-\colorlet{red}{gray}
-\colorlet{blue}{gray}
-\colorlet{fillheader}{white}
-\colorlet{header}{gray}
+\colorlet{green}{black}
+\colorlet{orange}{black}
+\colorlet{purple}{black}
+\colorlet{red}{black}
+\colorlet{blue}{black}
+\colorlet{fillheader}{black}
+\colorlet{header}{black}
 \else
-\colorlet{fillheader}{red}
-\colorlet{header}{white}
+\colorlet{fillheader}{white}
+\colorlet{header}{black}
 \fi
-\colorlet{textcolor}{gray}
-\colorlet{headercolor}{gray}
+\colorlet{textcolor}{black}
+\colorlet{headercolor}{black}
 
 %%%%%%%%%
 % Fonts %
@@ -62,19 +62,23 @@
 \color{white}
 }
 
-\newcommand{\header}[2]{%
+\newcommand{\header}[3]{
 \begin{tikzpicture}[remember picture,overlay]
-  \node [rectangle, fill=fillheader, anchor=north, minimum width=\paperwidth, minimum height=4cm] (box) at (current page.north){};
-  \node [anchor=center] (name) at (box) {
+  \node [rectangle, fill=fillheader, anchor=north, minimum width=\paperwidth, minimum height=2cm] (box) at (8.8cm, 45pt){};
+  \node [anchor=north] (name) at (box.north) {
     \color{header}
     \Huge #1
   };
-  \node [anchor=north] at (name.south) {
+  \node [anchor=north] at (8.8cm, 5pt) { % second number adjusts the height of #2 in the box
     \color{header}
     \large #2
   };
+  \node [anchor=north] at (box.south) {
+    \color{header}
+    \large #3
+  };
 \end{tikzpicture}
-\vspace{2.5cm}
+\vspace{1.5cm}
 \vspace{-2\parskip}
 }
 
@@ -88,14 +92,13 @@
 \newcommand\Color{
   \color{
       \ifcase\value{ColorCounter}
-      blue\or%
-      orange\or%
-      green\or%
-      purple\or%
-      red\or%
-      brown\else%
-      headercolor%
-      \fi%
+      blue\or
+      orange\or
+      green\or
+      purple\or
+      red\else
+      brown
+     \fi
   }
 }
 
@@ -130,47 +133,25 @@
 
 \setlength{\tabcolsep}{0pt}
 \newenvironment{entrylist}{
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
 }{
-\end{tabular*}
+    \end{tabular*}
 }
+
 \renewcommand{\bfseries}{\Large}
 \newcommand{\entry}[4]{
-#1&\parbox[t]{11cm}{
-  \textbf{#2}
-  \hfill
-{\normalsize #3}\\
-#4\vspace{\parsep}
-\vspace{0.25cm}
-}\\}
-
-%%%%%%%%%%%%%%
-% Side block %
-%%%%%%%%%%%%%%
-
-\RequirePackage[absolute,overlay]{textpos}
-
-\setlength{\TPHorizModule}{1cm}
-\setlength{\TPVertModule}{1cm}
-
-\newenvironment{aside}{%
-\let\oldsection\section
-\renewcommand{\section}[1]{
-\par\vspace{\baselineskip}{\Large\color{red} ##1}
-}
-\begin{textblock}{5.25}(0, 4)
-\begin{flushright}
-\obeycr
-}{%
-\restorecr
-\end{flushright}
-\end{textblock}
-\let\section\oldsection
-}
+    #1&\parbox[t]{14cm}{
+        \textbf{#2}
+        \hfill
+        {\normalsize #3}\\
+        #4\vspace{\parsep}
+        \vspace{0.25cm}
+    }
+\\}
 
 %%%%%%%%%%%%%%%%
 % Other tweaks %
 %%%%%%%%%%%%%%%%
 
-\RequirePackage[left=6cm,top=2cm,right=1.5cm,bottom=2.5cm,nohead,nofoot]{geometry}
+\RequirePackage[left=2cm,top=2cm,right=1.5cm,bottom=1.5cm,nohead,nofoot]{geometry}
 \RequirePackage{hyperref}

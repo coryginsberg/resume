@@ -1,82 +1,80 @@
 %!TEX TS-program = xelatex
 \documentclass[]{resume-class}
 
-\usepackage{setspace}
-\usepackage{lipsum}
-
-\begin{document}
+\begin{document}`
 \header{Cory Ginsberg}
        {cory.ginsberg1@gmail.com \textbullet \hspace{0.01cm} (847) 494 - 0910}
-
-\doublespacing
-
-% In the aside, each new line forces a line break
-\begin{aside}
-  \section{My Info}
-    19 Bedford Dr.
-    Vernon Hills, IL.
-    60061
-    (847) 494-0910
-    cory.ginsberg1@gmail.com
-  \section{Proficient Languages}
-    Swift \& Objective-C
-    Java, Python
-    CSS3 \& HTML5
-    JavaScript/TypeScript
-    C, SQL, TeX/LaTeX
-  \section{Proficient Programs}
-    Adobe Photoshop
-    Adobe Illustrator
-    Adobe After Effect
-    Autodesk Maya
-\end{aside}
+       {coryginsberg.com \textbullet \hspace{0.01cm} github.com/coryginsberg}
 
 \section{Education}
+    \begin{entrylist}
+        \entry
+            {2014 - June 2018}
+            {Bachelor of Science}
+            {DePaul University}
+            {Computer Science}
+    \end{entrylist}
 
-\begin{entrylist}
-  \entry
-    {2010 - 2014}
-    {High School Degree}
-    {Vernon Hills High School}
-    {General High School Degree}
-  \entry
-    {2014 - Present}
-    {Bachelor of Science}
-    {DePaul University}
-    {Computer Science}
-\end{entrylist}
 
-\section{Work Experience}
+\section{Technical Summary}
+    \begin{entrylist}
+        \entry
+            {Known Languages}
+            {Swift, Objective-C, Java, Python\\CSS, HTML, JavaScript/TypeScript\\ C, SQL, TeX/LaTeX}
+            {}
+            {}
+        \entry
+            {Known Software}
+            {Photoshop, Illustrator, After Effect\\Maya, SQLDeveloper, IntelliJ IDEA} % !!Only put the last ones on resumes that are going to gaming companies!! %
+            {}
+            {}
+    \end{entrylist}
 
-\begin{entrylist}
-  \entry
-    {2012 - 2015}
-    {Lifeguard}
-    {Vernon Hills Park District}
-    {Primary responsibilities include a variety of duties to prepare the pool for the demands of the guests.\\
-Lifeguards are responsible for teaching swimming lessons as well as guarding the pool.}
-  \entry
-    {2015 - 2016}
-    {Student Center Crew Member}
-    {DePaul University}
-    {Primary responsibilities include assisting guests with any and all requests, as well as seting up and assisting events for said guests.}
-  \entry
-    {2016 - Present}
-    {Student Center Student Manager}
-    {DePaul University}
-    {Primary responsibilities include assisting crew members with setting up and assisting events, as well as answering any and all questions guests have and reporting on the activities of crew members.}
-\end{entrylist}
+\section{Programming Experience}
+    \begin{entrylist}
+        \entry
+            {iOS/Android App}
+            {Assurance HVAC}
+            {}
+            {Allows customers to call Assurance HVAC quickly in an emergency, get coupons, and find out what area the company covers.}
+        \entry
+            {Website}
+            {Breathe EZ Home Solutions}
+            {breatheezhome.com}
+            {Allows customers to get coupons, request service, and view more information about the company online.}
+    \end{entrylist}
 
 \section{Internship Experience}
 
-\begin{entrylist}
-  \entry
-    {May - August 2012}
-    {Intern}
-    {Entec Data Managers, Inc.}
-    {Learned how a database system works on the inside.\\
-    Used Microsoft Access to build/maintain databases.\\
-    Learned VBA, SQL, and Visual Basic .NET while interning.}
-\end{entrylist}
+    \begin{entrylist}
+        \entry
+            {May - August 2012}
+            {Intern}
+            {Entec Data Managers, Inc.}
+            {Learned how a database system works on the inside.\\
+            Used Microsoft Access to build/maintain databases.\\
+            Learned VBA, SQL, and Visual Basic .NET while interning.}
+    \end{entrylist}
+
+\section{Work Experience}
+
+    \begin{entrylist}
+        \entry
+            {2016 - Present}
+            {Student Center Student Manager}
+            {DePaul University}
+            {Assist crew members with setting up and assisting events, as well as answering any and all questions guests have and reporting on the activities of crew members.}
+        \entry
+            {2015 - 2016}
+            {Student Center Crew Member}
+            {DePaul University}
+            {Assist guests with any and all requests, as well as seting up and assisting events for said guests.}
+        \entry
+            {2012 - 2015}
+            {Lifeguard}
+            {Vernon Hills Park District}
+            {Watch out for the wellbeing of guests, as well as prepare the pool for the demands of the guests.
+             Lifeguards are responsible for teaching swimming lessons in addition to guarding the pool.}
+    \end{entrylist}
 
 \end{document}
